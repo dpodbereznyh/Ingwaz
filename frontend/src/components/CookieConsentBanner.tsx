@@ -12,16 +12,17 @@ export function CookieConsentBanner() {
   const analyticsAvailable = isYandexMetrikaEnabled
 
   return (
-    <div className="cookie-consent" role="dialog" aria-modal="false" aria-label="Уведомление о cookies">
+    <div className="cookie-consent" role="dialog" aria-modal="false" aria-label="Уведомление о куки">
       <div className="cookie-consent-inner">
         <div className="cookie-consent-text">
-          <p className="cookie-consent-title">Мы используем cookies</p>
+          <p className="cookie-consent-title">Мы используем куки</p>
           <p className="cookie-consent-body">
-            Нужные cookies нужны для работы сайта.
+            Нужные куки нужны для работы сайта.
             {analyticsAvailable ? (
               <>
                 {' '}
-                Для статистики посещений используется Яндекс.Метрика. Ниже можно зафиксировать отношение к аналитике в соответствии с политикой.
+                Для статистики посещений используется Яндекс.Метрика. Ниже можно зафиксировать отношение к аналитике в
+                соответствии с политикой.
               </>
             ) : (
               <> Сторонняя аналитика на сайте сейчас отключена.</>
@@ -32,7 +33,7 @@ export function CookieConsentBanner() {
             </Link>{' '}
             и{' '}
             <Link to="/cookies" className="cookie-consent-link">
-              описании cookies
+              описании куки
             </Link>
             .
           </p>

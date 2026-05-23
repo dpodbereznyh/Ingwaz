@@ -9,8 +9,18 @@
     />
     <meta
       name="keywords"
-      content="сигнал аудитории, инсайты из комментариев, идеи для контента, youtube комментарии, audience intelligence"
+      content="сигнал аудитории, инсайты из комментариев, идеи для контента, youtube комментарии, аналитика аудитории"
     />
+    <script>
+      (function () {
+        try {
+          var t = localStorage.getItem('ingwaz-theme-v1')
+          if (t === 'light' || t === 'dark') document.documentElement.dataset.theme = t
+          else if (window.matchMedia('(prefers-color-scheme: dark)').matches) document.documentElement.dataset.theme = 'dark'
+          else document.documentElement.dataset.theme = 'light'
+        } catch (e) {}
+      })()
+    </script>
     <meta name="robots" content="index, follow" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="ru_RU" />

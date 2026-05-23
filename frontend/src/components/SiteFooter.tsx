@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import { ThemeToggle } from './ThemeToggle'
 
 export function SiteFooter() {
   return (
@@ -6,7 +7,9 @@ export function SiteFooter() {
       <div className="site-footer-links">
         <Link to="/privacy">Конфиденциальность</Link>
         <span aria-hidden="true">·</span>
-        <Link to="/cookies">Cookies</Link>
+        <Link to="/cookies">Куки</Link>
+        <span aria-hidden="true">·</span>
+        <ThemeToggle />
       </div>
       <p className="site-footer-muted">
         Витрина проекта «Сигнал аудитории» на домене{' '}

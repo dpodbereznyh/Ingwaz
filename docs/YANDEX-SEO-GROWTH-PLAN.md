@@ -26,12 +26,20 @@
 | Шаг | Действие | Готово |
 |-----|----------|--------|
 | 0.1 | Добавить сайт в **Яндекс.Вебмастер** (отдельно от subs) | ☐ |
-| 0.2 | Главное зеркало: HTTPS apex | ☐ |
-| 0.3 | `curl` `/robots.txt`, `/sitemap.xml`, `/favicon.ico` → 200 | ☐ |
-| 0.4 | **Метрика:** свой счётчик; цели: `click_commentsignal`, опц. `click_other_tool` | ☐ |
-| 0.5 | Cookie consent до загрузки Метрики — [COOKIE-CONSENT-AND-ANALYTICS.md](./COOKIE-CONSENT-AND-ANALYTICS.md) | ☐ |
+| 0.2 | Главное зеркало: HTTPS apex | ☑ |
+| 0.3 | `curl` `/robots.txt`, `/sitemap.xml`, `/favicon.ico` → 200 | ☑ (после v0.3 deploy) |
+| 0.4 | **Метрика:** счётчик `109383201`; цели: `click_commentsignal`, `click_other_tool` | ☑ |
+| 0.5 | Cookie-баннер + Метрика без блокировки загрузки — [COOKIE-CONSENT-AND-ANALYTICS.md](./COOKIE-CONSENT-AND-ANALYTICS.md) | ☑ |
 
 **Регион:** «Нет региона».
+
+### Яндекс.Вебмастер (ручной шаг)
+
+1. [webmaster.yandex.ru](https://webmaster.yandex.ru/) → **Добавить сайт** → `https://ingwaz.space`
+2. **Подтверждение:** DNS TXT `yandex-verification:a060ab26aa8d9dcf` (запись уже в зоне `ingwaz.space`)
+3. **Индексирование → Файлы Sitemap** → `https://ingwaz.space/sitemap.xml`
+4. **Переобход страниц** → `https://ingwaz.space` (без trailing `/`)
+5. Опционально: связать счётчик Метрики `109383201` в настройках сайта
 
 ---
 
@@ -40,9 +48,9 @@
 | Шаг | Действие | Готово |
 |-----|----------|--------|
 | 1.1 | Wordstat (ориентир): «инсайты из комментариев youtube», «идеи для контента канал», «обратная связь аудитории» | ☐ |
-| 1.2 | Title/description по [NAMING-AND-POSITIONING.md](./NAMING-AND-POSITIONING.md) | ☐ |
-| 1.3 | Видимый текст на `/`: thesis, для кого, CTA, блок tools (не keyword stuffing) | ☐ |
-| 1.4 | Переобход `/` в Вебмастере | ☐ |
+| 1.2 | Title/description по [NAMING-AND-POSITIONING.md](./NAMING-AND-POSITIONING.md) | ☑ |
+| 1.3 | Видимый текст на `/`: thesis, для кого, CTA, скрин CommentSignal | ☑ (v0.3) |
+| 1.4 | Переобход `/` в Вебмастере | ☐ (после 0.1) |
 
 ---
 

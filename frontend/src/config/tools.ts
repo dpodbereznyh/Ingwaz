@@ -24,13 +24,13 @@ export const PORTFOLIO_TOOLS: PortfolioTool[] = [
   {
     id: 'seobrief',
     name: 'SEO Brief Generator',
-    description: 'Структурированный SEO-бриф для экспертных статей: H1/H2, intent, LSI и чеклист без агентского перегруза.',
+    description: 'Структурированный SEO-бриф для экспертных статей: заголовки, намерение запроса, семантика и чеклист без агентского перегруза.',
     href: withUtm('https://seobrief.ingwaz.space'),
   },
   {
     id: 'compsnap',
     name: 'Competitor Snapshot',
-    description: 'One-page обзор конкурентов: позиционирование, офферы и отличия без ручного ресерча.',
+    description: 'Обзор конкурентов на одной странице: позиционирование, офферы и отличия без ручного ресёрча.',
     href: withUtm('https://compsnap.ingwaz.space'),
   },
 ]
@@ -45,7 +45,7 @@ export const MAINTENANCE_TOOLS: PortfolioTool[] = [
   {
     id: 'invoice',
     name: 'Invoice & Proposal Builder',
-    description: 'Счета и коммерческие предложения (EN).',
+    description: 'Счета и коммерческие предложения.',
     href: withUtm('https://invoicekit.ingwaz.space'),
   },
   {

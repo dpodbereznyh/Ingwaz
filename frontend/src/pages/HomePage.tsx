@@ -1,6 +1,5 @@
 import { Fragment } from 'react'
 import { METRIKA_GOALS, reachMetrikaGoal } from '../analytics/metricaGoals'
-import { EVIDENCE_EXAMPLE_ROWS } from '../content/evidenceExample'
 import { MAINTENANCE_TOOLS, PORTFOLIO_TOOLS, PRIMARY_TOOL } from '../config/tools'
 import { HOME_FAQ_ITEMS } from '../seo/homeFaq'
 
@@ -17,7 +16,7 @@ export function HomePage() {
   return (
     <>
       <header className="hero">
-        <p className="eyebrow">Audience intelligence для экспертного контента</p>
+        <p className="eyebrow">Аналитика аудитории для экспертного контента</p>
         <h1>Сигнал аудитории</h1>
         <p className="tagline">
           Извлекайте темы, вопросы и повторяющиеся сигналы из комментариев аудитории — до того, как контент
@@ -26,7 +25,7 @@ export function HomePage() {
         <p className="thesis">
           «Сигнал аудитории» — минимальная витрина инструментов для авторов экспертного контента: YouTube,
           образование, B2B и нишевая экспертиза. Основной фокус — понимание аудитории через комментарии, паттерны
-          вопросов и контент-сигналы, а не «AI ради AI».
+          вопросов и контент-сигналы, а не «ИИ ради ИИ».
         </p>
       </header>
 
@@ -52,27 +51,30 @@ export function HomePage() {
         <h2 id="evidence-heading" className="section-title">
           Как выглядит сигнал
         </h2>
-        <div className="evidence-wrap">
-          <table className="evidence-table">
-            <thead>
-              <tr>
-                <th scope="col">Сигнал в комментариях</th>
-                <th scope="col">Частота</th>
-                <th scope="col">Идея для контента</th>
-              </tr>
-            </thead>
-            <tbody>
-              {EVIDENCE_EXAMPLE_ROWS.map((row) => (
-                <tr key={row.signal}>
-                  <td>{row.signal}</td>
-                  <td className="evidence-count">{row.count}</td>
-                  <td>{row.idea}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-          <p className="evidence-note">Обезличенный пример формата вывода CommentSignal.</p>
-        </div>
+        <figure className="evidence-screenshot">
+          <a
+            href={PRIMARY_TOOL.href}
+            className="evidence-screenshot-link"
+            onClick={() => trackToolClick(PRIMARY_TOOL.id, true)}
+            rel="noopener noreferrer"
+          >
+            <img
+              src="/images/commentsignal-screenshot.png"
+              alt="CommentSignal: идеи для роликов из комментариев YouTube"
+              width={1280}
+              height={800}
+              loading="lazy"
+              decoding="async"
+            />
+          </a>
+          <figcaption className="evidence-note">
+            Скриншот сервиса CommentSignal на{' '}
+            <a href="https://commentsignal.ingwaz.space" rel="noopener noreferrer">
+              commentsignal.ingwaz.space
+            </a>
+            .
+          </figcaption>
+        </figure>
       </section>
 
       <section className="section" aria-labelledby="audience-heading">
@@ -80,11 +82,12 @@ export function HomePage() {
           Для авторов экспертного контента
         </h2>
         <p className="audience-fit">
-          <strong>Подходит:</strong> образовательные YouTube-каналы; B2B-эксперты; нишевые авторы; creator-команды
+          <strong>Подходит:</strong> образовательные YouTube-каналы; B2B-эксперты; нишевые авторы; команды авторов
           вокруг экспертизы.
         </p>
         <p className="audience-exclude">
-          <strong>Не для:</strong> mass-entertainment, viral Shorts, универсальный «AI-контент-конвейер».
+          <strong>Не для:</strong> массового развлекательного контента, вирусных Shorts, универсального «ИИ-конвейера
+          контента».
         </p>
       </section>
 

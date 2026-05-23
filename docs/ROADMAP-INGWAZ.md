@@ -12,7 +12,7 @@
 
 ---
 
-## v0.2 — Trust & hierarchy (текущий релиз)
+## v0.2 — Trust & hierarchy ✅
 
 **Deliverables:**
 
@@ -25,18 +25,26 @@
 
 ---
 
-## v0.3 — Trust & specificity (+2–3 нед)
+## v0.3 — Trust & specificity ✅ (текущий релиз)
 
-- Реальный скрин CommentSignal вместо mock  
-- Короткий founder note (опционально)  
-- Светлая тема — если A/B нужен  
-- Максимум **1** доп. indexable URL только при сигнале из §6 ROOT  
+- Реальный скрин CommentSignal вместо mock ([CAPTURE-COMMENTSIGNAL-SCREENSHOT.md](./CAPTURE-COMMENTSIGNAL-SCREENSHOT.md))  
+- Светлая тема по умолчанию + переключатель в footer  
+- Русификация UI (P0)  
+- Чеклист Яндекс.Вебмастер в [YANDEX-SEO-GROWTH-PLAN.md](./YANDEX-SEO-GROWTH-PLAN.md) (sitemap + переобход — ручной шаг после верификации)
 
 **KPI:** assisted signups; return visits  
 
 ---
 
-## Не делать на v0.2–v0.3
+## v0.4 — (бэклог)
+
+- Короткий founder note (опционально)  
+- OG-image 1200×630  
+- Максимум **1** доп. indexable URL только при сигнале из §6 ROOT  
+
+---
+
+## Не делать на v0.2–v0.4
 
 - Блог, рубрики, changelog на корне  
 - 5+ indexable pages  

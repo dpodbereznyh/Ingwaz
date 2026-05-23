@@ -22,18 +22,18 @@ Thesis-витрина, не marketplace. Copy: [CONTENT-COPY.md](./CONTENT-COPY.
 | Элемент | Вес |
 |---------|-----|
 | Primary CTA | Крупная кнопка + accent surface |
-| Evidence | Таблица/карточки с monospace accent |
+| Evidence | Скрин CommentSignal + подпись со ссылкой на prod |
 | Secondary | Текстовые ссылки, без равных card с primary |
 | Maintenance | Мелкий текст, border-top muted |
 | FAQ | `<details>` или простой список, без accordion-анимаций |
 
 ---
 
-## Тема (v0.2)
+## Тема (v0.3)
 
-Тёмная база (текущая). Светлая тема — v0.3 при необходимости (см. ROADMAP).
+**Светлая** по умолчанию; переключатель «Светлая / Тёмная» в footer. Сохранение в `localStorage` (`ingwaz-theme-v1`). Без flash — inline script в `index.html`.
 
-Палитра: `--accent` #6b9fff, фон #0f1117, поверхности #171923.
+Палитра light: `--accent` #3d6fd4, фон #f7f8fc. Dark: `--accent` #6b9fff, фон #0f1117.
 
 ---
 
