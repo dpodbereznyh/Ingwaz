@@ -1,0 +1,23 @@
+---
+description: Static site — local build, deliver dist to VPS (Ingwaz apex)
+alwaysApply: true
+---
+
+# Local build and prod delivery (Ingwaz)
+
+Thesis-site on **`https://ingwaz.space`** — **static** `frontend/dist`, no Laravel on v1.
+
+1. Build locally: `cd frontend && npm run build` (with `frontend/.env.production`, `VITE_SITE_URL=https://ingwaz.space`).
+2. Deliver **`frontend/dist/`** to **`/var/www/ingwaz/public/`** on VPS (`rsync` or `scp`).
+3. **Do not** run `npm run build` on VPS by default.
+
+## SSH
+
+- Alias: **`ingwaz-vps`** — see `docs/ssh-config-snippet.conf`
+- Server path: **`/var/www/ingwaz/public`**
+- Deploy script: `./scripts/deploy-prod.sh` (rsync; on Windows use scp from docs/DEPLOY-VPS.md §3.2)
+
+## References
+
+- `docs/DEPLOY-VPS.md`
+- `docs/SEO.md`

@@ -1,0 +1,15 @@
+---
+description: Cookie banner and Yandex Metrika gating (Ingwaz)
+alwaysApply: true
+---
+
+# Cookie consent and analytics (Ingwaz)
+
+- Visible banner with links to `/privacy` and `/cookies`.
+- **Do not load** Yandex Metrika until analytics consent is granted.
+- Persist choice in `localStorage` with policy version.
+- Use a **dedicated** `VITE_YANDEX_METRIKA_ID` for this site (not copied from seobrief/compsnap).
+
+See **`docs/COOKIE-CONSENT-AND-ANALYTICS.md`**.
+
+After frontend changes, rebuild locally and redeploy `frontend/dist`.

@@ -1,0 +1,32 @@
+---
+description: SSH к VPS для Ingwaz (ingwaz.space apex)
+alwaysApply: true
+---
+
+# SSH к прод-серверу (Ingwaz)
+
+## Алиас
+
+**`ingwaz-vps`** — не путать с `commentsignal-vps`, `seo-brief-generator`, `competitor-snapshot`.
+
+Сниппет: **`docs/ssh-config-snippet.conf`**. Подключение: `ssh ingwaz-vps`.
+
+## Неинтерактивно
+
+```bash
+ssh -o BatchMode=yes -o ConnectTimeout=15 ingwaz-vps "<команда>"
+```
+
+## Пути
+
+- Каталог проекта на VPS: **`/var/www/ingwaz`**
+- Document root nginx: **`/var/www/ingwaz/public`**
+- Канон: **`https://ingwaz.space`**
+
+## Деплой
+
+Доставка статики + при необходимости обновление nginx conf из `scripts/nginx-host-ingwaz.space.conf`. Подробно: **`docs/DEPLOY-VPS.md`**.
+
+## Безопасность
+
+Не коммитить ключи и `.env*`.

@@ -1,0 +1,34 @@
+---
+description: Git и GitHub для репозитория Ingwaz (корень ingwaz.space)
+alwaysApply: true
+---
+
+# Git и GitHub (этот проект)
+
+## Удалённый репозиторий
+
+- **Origin:** `git@github.com:dpodbereznyh/Ingwaz.git`
+- **GitHub:** https://github.com/dpodbereznyh/Ingwaz
+- **Основная ветка:** `main`
+
+Проверка: `git remote -v` → `origin` должен указывать на URL выше.
+
+## Репозиторий на диске
+
+- **Локальный путь:** `D:\Works\Ingwaz`
+- **Назначение:** thesis-сайт на `https://ingwaz.space` («Сигнал аудитории»), документация в `docs/`
+- **Не путать** с продуктовыми репо на поддоменах (CommentSignal, SEO Brief и т.д.) — см. `docs/PORTFOLIO-MAP.md`
+
+## Workflow
+
+1. Осмысленные коммиты; **не коммитить** `.env`, ключи, секреты.
+2. Перед push: `git status`, нет ли случайных артефактов.
+3. **`git push`** — только по явной просьбе пользователя (если в задаче не сказано иное).
+4. **Не** `git push --force` на `main` без явного запроса.
+5. PR/issues при необходимости — через `gh` из корня этого репозитория.
+
+## Документация
+
+- Индекс: `docs/README.md`
+- Решения по корню: `docs/ROOT-DOMAIN-DECISION.md`
+- Подробнее: `docs/GIT.md`
