@@ -4,26 +4,31 @@ import { METRIKA_GOALS, reachMetrikaGoal } from '../analytics/metricaGoals'
 import { initYandexMetrika, isYandexMetrikaEnabled, yandexMetrikaHit } from '../analytics/yandexMetrika'
 import { useConsent } from '../consent/ConsentContext'
 
+/**
+ * SPA page views for Yandex Metrika.
+ * Loads when the counter is configured — not gated on cookie consent (product choice).
+ */
 export function YandexMetrika() {
   const location = useLocation()
   const { analyticsConsent } = useConsent()
   const skipNextHit = useRef(true)
   const prevConsent = useRef<typeof analyticsConsent | null>(null)
+  const didMountInit = useRef(false)
 
   useEffect(() => {
-    if (!isYandexMetrikaEnabled || analyticsConsent !== 'granted') {
+    if (!isYandexMetrikaEnabled || didMountInit.current) {
       return
     }
-
+    didMountInit.current = true
     initYandexMetrika()
     queueMicrotask(() => {
       yandexMetrikaHit()
     })
     skipNextHit.current = true
-  }, [analyticsConsent])
+  }, [])
 
   useEffect(() => {
-    if (!isYandexMetrikaEnabled || analyticsConsent !== 'granted') {
+    if (!isYandexMetrikaEnabled) {
       return
     }
     if (skipNextHit.current) {
@@ -31,7 +36,7 @@ export function YandexMetrika() {
       return
     }
     yandexMetrikaHit()
-  }, [analyticsConsent, location.pathname, location.search])
+  }, [location.pathname, location.search])
 
   useEffect(() => {
     const prev = prevConsent.current

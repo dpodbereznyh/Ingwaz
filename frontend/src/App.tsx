@@ -1,11 +1,14 @@
 import { Route, Routes } from 'react-router-dom'
 import { Layout } from './components/Layout'
+import { TrailingSlashRedirect } from './components/TrailingSlashRedirect'
 import { HomePage } from './pages/HomePage'
 import { LegalStubPage } from './pages/LegalStubPage'
 
 export function App() {
   return (
-    <Routes>
+    <>
+      <TrailingSlashRedirect />
+      <Routes>
       <Route element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route
@@ -22,11 +25,12 @@ export function App() {
           element={
             <LegalStubPage
               title="Cookies и localStorage"
-              intro="Здесь будет описание категорий cookies, localStorage и порядка управления согласием на аналитику."
+              intro="Здесь будет описание категорий cookies, localStorage и порядка управления согласием. Яндекс.Метрика используется для статистики посещений."
             />
           }
         />
       </Route>
     </Routes>
+    </>
   )
 }

@@ -24,13 +24,13 @@ export const PORTFOLIO_TOOLS: PortfolioTool[] = [
   {
     id: 'seobrief',
     name: 'SEO Brief Generator',
-    description: 'SEO-бриф и ТЗ на статью: meta, H1/H2, LSI — для редакции и маркетинга.',
+    description: 'Структурированный SEO-бриф для экспертных статей: H1/H2, intent, LSI и чеклист без агентского перегруза.',
     href: withUtm('https://seobrief.ingwaz.space'),
   },
   {
     id: 'compsnap',
     name: 'Competitor Snapshot',
-    description: 'Компактный снимок конкурентов по нише: таблица игроков и цитаты с сайтов.',
+    description: 'One-page обзор конкурентов: позиционирование, офферы и отличия без ручного ресерча.',
     href: withUtm('https://compsnap.ingwaz.space'),
   },
 ]

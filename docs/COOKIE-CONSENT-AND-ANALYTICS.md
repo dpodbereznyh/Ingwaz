@@ -1,17 +1,21 @@
 # Cookie consent и аналитика (Ingwaz)
 
-Корень **`ingwaz.space`** — публичный RU-сайт. Модель как у **Quiz / SEO Brief / CommentSignal**: **не грузить** Яндекс.Метрику до согласия на analytics.
+Корень **`ingwaz.space`** — публичный RU-сайт. Модель как у **Landing Critic AI / Invoice & Proposal Builder**:
 
-**Эталон реализации:** `D:\Works\SEO Brief Generator\docs\COOKIE-CONSENT-AND-ANALYTICS.md`, код `frontend/src/analytics/` и `ConsentContext` в seobrief.
+- **Яндекс.Метрика** подключается при наличии счётчика **без ожидания** выбора в баннере.
+- Баннер фиксирует **ознакомление** и предпочтение пользователя в `localStorage` (версия политики для re-prompt).
+- Не вставлять blocking `<script>` в `index.html` — init в одном модуле `YandexMetrika.tsx` + `yandexMetrika.ts`.
+
+**Эталон кода:** `D:\Works\Landing Critic AI\frontend\src\components\YandexMetrika.tsx`.
 
 ---
 
 ## MVP
 
-1. Баннер с ссылкой на `/cookies` и `/privacy`.
-2. Кнопки: отклонить non-essential / принять analytics (или единая «Понятно» — по юридической модели; для портфеля предпочтительно **явное** accept analytics).
+1. Баннер с ссылками на `/cookies` и `/privacy`.
+2. Кнопки: «Только необходимые» / «Принять аналитику» (или «Понятно», если счётчик выключен) — выбор сохраняется, **не блокирует** загрузку Метрики на prod.
 3. `localStorage` + версия политики для re-prompt.
-4. Prod: **`VITE_YANDEX_METRIKA_ID=109383201`** (счётчик `ingwaz.space`); `0` — выкл. на staging. Не использовать ID subs.
+4. Prod: **`VITE_YANDEX_METRIKA_ID=109383201`**; `0` — выкл. на staging.
 
 ---
 
@@ -19,14 +23,14 @@
 
 | Идентификатор | Смысл |
 |---------------|--------|
-| `igw_click_commentsignal` | Клик CTA → CommentSignal |
-| `igw_click_tool` | Клик другого tool |
-| `igw_consent_analytics_accept` | Приняли analytics |
+| `cta_comment_signal` | Клик CTA → CommentSignal |
+| `cta_other_tool` | Клик другого tool |
+| `consent_analytics_accept` | Явно приняли analytics в баннере |
 
 ---
 
 ## Deploy
 
-Счётчик попадает в бандл только через `frontend/.env.production` при **локальной** сборке — не копировать `.env.production` с других проектов на том же VPS.
+Счётчик попадает в бандл через `frontend/.env.production` при **локальной** сборке — не коммитить `.env.production`.
 
 См. [DEPLOY-VPS.md](./DEPLOY-VPS.md) §3.

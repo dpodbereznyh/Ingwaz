@@ -1,14 +1,14 @@
 ---
-description: Cookie banner and Yandex Metrika gating (Ingwaz)
+description: Cookie banner and Yandex Metrika (Ingwaz)
 alwaysApply: true
 ---
 
-# Cookie consent and analytics (Ingwaz)
+# Cookie notice and analytics (Ingwaz)
 
-- Visible banner with links to `/privacy` and `/cookies`.
-- **Do not load** Yandex Metrika until analytics consent is granted.
-- Persist choice in `localStorage` with policy version.
-- Use a **dedicated** `VITE_YANDEX_METRIKA_ID` for this site (not copied from seobrief/compsnap).
+- Visible **banner** with links to `/privacy` and `/cookies`.
+- **Yandex Metrika** loads on SPA start via `YandexMetrika.tsx` when `VITE_YANDEX_METRIKA_ID` is set — **not** gated by the cookie banner.
+- The banner records the user's **acknowledgment** choice in `localStorage` (policy version for re-prompt). It does **not** enable/disable the counter.
+- Use a **dedicated** `VITE_YANDEX_METRIKA_ID` for this site (currently `109383201`).
 
 See **`docs/COOKIE-CONSENT-AND-ANALYTICS.md`**.
 

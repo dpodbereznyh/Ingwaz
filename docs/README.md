@@ -7,6 +7,10 @@
 | Файл | Назначение |
 |------|------------|
 | [ROOT-DOMAIN-DECISION.md](./ROOT-DOMAIN-DECISION.md) | **Главный документ:** решение, anti-goals, план 90 дней, метрики 30/90 |
+| [CONTENT-COPY.md](./CONTENT-COPY.md) | Copy deck главной (v0.2) |
+| [UI-GUIDELINES.md](./UI-GUIDELINES.md) | Иерархия блоков, visual rules |
+| [FOUNDER-DEFAULTS.md](./FOUNDER-DEFAULTS.md) | Продуктовые defaults без интервью |
+| [ROADMAP-INGWAZ.md](./ROADMAP-INGWAZ.md) | Roadmap витрины v0.1–v0.3 |
 | [NAMING-AND-POSITIONING.md](./NAMING-AND-POSITIONING.md) | Публичное имя, thesis, title/H1 для главной |
 | [BLOGGER-SEGMENTS.md](./BLOGGER-SEGMENTS.md) | 9 типов блогеров и приоритет для корня / creator-линии |
 | [ANALYSIS-CREATOR-DIRECTIONS.md](./ANALYSIS-CREATOR-DIRECTIONS.md) | Разбор creator-направлений и shortlist (2026-05-07) |

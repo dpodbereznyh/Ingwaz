@@ -14,8 +14,9 @@ export function LegalStubPage({ title, intro }: LegalStubPageProps) {
       </p>
       <p>{intro}</p>
       <p>
-        Согласие на аналитику хранится в <code>localStorage</code> браузера (ключ{' '}
-        <code>ingwaz:cookie-consent:v1</code>). Яндекс.Метрика подключается только после явного согласия пользователя.
+        Согласие на аналитику сохраняется в <code>localStorage</code> (ключ{' '}
+        <code>ingwaz:cookie-consent:v1</code>). Яндекс.Метрика подключается при загрузке сайта; баннер фиксирует ваш
+        выбор по политике.
       </p>
       <p>
         <Link to="/">← На главную</Link>

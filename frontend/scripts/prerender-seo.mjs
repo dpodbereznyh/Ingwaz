@@ -53,6 +53,25 @@ const SEO_BY_PATH = {
 
 const INDEXABLE_PATHS = Object.keys(SEO_BY_PATH)
 const ORG_JSONLD_ID = 'ingwaz-jsonld-organization'
+const FAQ_JSONLD_ID = 'ingwaz-jsonld-faqpage'
+
+const HOME_FAQ_JSON_PATH = path.join(__dirname, '../src/seo/homeFaq.content.json')
+const homeFaqData = JSON.parse(fs.readFileSync(HOME_FAQ_JSON_PATH, 'utf8'))
+
+function buildHomeFaqPageJsonLdFromData(data) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: data.items.map((item) => ({
+      '@type': 'Question',
+      name: item.question,
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: item.answer,
+      },
+    })),
+  }
+}
 
 if (!fs.existsSync(INDEX_HTML_PATH)) {
   throw new Error(`Cannot prerender SEO: missing file ${INDEX_HTML_PATH}`)
@@ -149,10 +168,14 @@ function buildRouteHtml(routePath) {
       name: SITE_NAME,
       url: siteUrl,
     })
+    if (routePath === '/') {
+      html = upsertJsonLd(html, FAQ_JSONLD_ID, buildHomeFaqPageJsonLdFromData(homeFaqData))
+    }
   } else {
     html = removeCanonical(html)
     html = removeMeta(html, 'property', 'og:url')
     html = removeJsonLd(html, ORG_JSONLD_ID)
+    html = removeJsonLd(html, FAQ_JSONLD_ID)
   }
 
   if (ogImageUrl !== '') {

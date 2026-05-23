@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation } from 'react-router-dom'
+import { buildHomeFaqPageJsonLd, HOME_FAQ_JSON_LD_SCRIPT_ID } from '../seo/homeFaq'
 import { buildOrganizationJsonLd, ogImageUrl, resolvePageSeo, siteBaseUrl } from '../seo/metaConfig'
 
 function upsertMeta(attr: 'name' | 'property', key: string, content: string): void {
@@ -85,6 +86,12 @@ export function DocumentMeta() {
       upsertJsonLdScript(ORG_JSON_LD_ID, buildOrganizationJsonLd(base))
     } else {
       upsertJsonLdScript(ORG_JSON_LD_ID, null)
+    }
+
+    if (pathname === '/' && base) {
+      upsertJsonLdScript(HOME_FAQ_JSON_LD_SCRIPT_ID, buildHomeFaqPageJsonLd())
+    } else {
+      upsertJsonLdScript(HOME_FAQ_JSON_LD_SCRIPT_ID, null)
     }
   }, [pathname])
 

@@ -27,7 +27,7 @@
 | **`sitemap.xml`** | Только indexable URL; хост `ingwaz.space`; стиль URL = canonical (без лишнего `/`). |
 | **Favicon** | `GET /favicon.ico`, `/favicon.svg` → **200**. |
 | **JSON-LD** | На главной: **`Organization`** (+ опционально **`WebSite`**); без product-schema subs. |
-| **Аналитика** | [COOKIE-CONSENT-AND-ANALYTICS.md](./COOKIE-CONSENT-AND-ANALYTICS.md) — Метрика после consent. |
+| **Аналитика** | [COOKIE-CONSENT-AND-ANALYTICS.md](./COOKIE-CONSENT-AND-ANALYTICS.md) — Метрика при старте SPA; баннер — учёт выбора. |
 
 **Быстрая сверка после выката:**
 

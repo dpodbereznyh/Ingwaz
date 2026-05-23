@@ -156,7 +156,7 @@ git clone git@github.com:dpodbereznyh/Ingwaz.git .
 | `GET https://ingwaz.space/` | 200, title «Сигнал аудитории» |
 | `/robots.txt`, `/sitemap.xml` | 200 |
 | Ссылка на CommentSignal | ведёт на `https://commentsignal.ingwaz.space` (+ UTM) |
-| Метрика | грузится после consent (если включена) |
+| Метрика | грузится при старте SPA (если `VITE_YANDEX_METRIKA_ID` задан); баннер — учёт выбора |
 
 SEO-чеклист: [SEO.md](./SEO.md) §7.
 
