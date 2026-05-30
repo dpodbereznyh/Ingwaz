@@ -49,6 +49,20 @@ const SEO_BY_PATH = {
       'сигнал аудитории, инсайты из комментариев, идеи для контента, youtube комментарии, audience intelligence, CommentSignal',
     robots: 'index, follow',
   },
+  '/privacy': {
+    title: 'Политика конфиденциальности (черновик) — Сигнал аудитории',
+    description:
+      'Черновик политики конфиденциальности Сигнал аудитории. Не является финальным юридическим текстом.',
+    keywords: 'конфиденциальность, персональные данные',
+    robots: 'index, follow',
+  },
+  '/cookies': {
+    title: 'Cookies и localStorage (черновик) — Сигнал аудитории',
+    description:
+      'Черновик описания cookies и localStorage для Сигнал аудитории. Не является финальным юридическим текстом.',
+    keywords: 'cookies, localStorage',
+    robots: 'index, follow',
+  },
 }
 
 const INDEXABLE_PATHS = Object.keys(SEO_BY_PATH)

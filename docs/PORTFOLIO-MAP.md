@@ -11,5 +11,7 @@
 | `landingcriticai.ingwaz.space` | Landing Critic AI | `D:\Works\Landing Critic AI` | Maintenance |
 | `invoicekit.ingwaz.space` | Invoice & Proposal Builder | `D:\Works\Invoice & Proposal Builder` | Maintenance (EN) |
 | `quiz.ingwaz.space` | Quiz | `D:\Works\quiz` | Maintenance (B2C) |
+| `metadatapack.ingwaz.space` | YouTube Metadata Pack | `D:\Works\MetadataPack` | Secondary (micro-SaaS) |
+| `service-aeo-audit.ingwaz.space` | AEO Visibility Audit | `D:\Works\SERVICE-AEO-AUDIT` | Secondary (micro-SaaS, EN) |
 
 **На главной корня:** CommentSignal — главный CTA; остальные — компактный список «другие инструменты», без шести равных hero-блоков.

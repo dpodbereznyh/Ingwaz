@@ -11,11 +11,10 @@
 ## URL для переобхода (MVP)
 
 1. https://ingwaz.space  
-
-После публикации legal:
-
 2. https://ingwaz.space/privacy  
 3. https://ingwaz.space/cookies  
+
+`sitemap.xml` и `INDEXABLE_PATHS` синхронизированы (**30.05.2026**); prerender для трёх путей.
 
 Не отправлять варианты **со слэшем** — 301 на канон без `/`.
 
@@ -77,6 +76,12 @@
 Подробнее: [ROOT-DOMAIN-DECISION.md](./ROOT-DOMAIN-DECISION.md) §6.
 
 ---
+
+## Журнал
+
+| Дата | Действие |
+|------|----------|
+| **2026-05-30** | sitemap **3** URL; legal `index, follow`; prerender `/privacy`, `/cookies`; деплой `public/`; `tools.ts` — MetadataPack, AEO Audit |
 
 ## Бэклог (не MVP)
 

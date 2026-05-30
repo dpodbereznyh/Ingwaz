@@ -33,6 +33,18 @@ export const PORTFOLIO_TOOLS: PortfolioTool[] = [
     description: 'Обзор конкурентов на одной странице: позиционирование, офферы и отличия без ручного ресёрча.',
     href: withUtm('https://compsnap.ingwaz.space'),
   },
+  {
+    id: 'metadatapack',
+    name: 'Metadata Pack',
+    description: 'YouTube metadata pack из транскрипта: заголовки, описание, главы и закреп.',
+    href: withUtm('https://metadatapack.ingwaz.space'),
+  },
+  {
+    id: 'service-aeo',
+    name: 'AEO Audit',
+    description: 'AEO-аудит: видимость сайта в ChatGPT, Perplexity и нейропоиске.',
+    href: withUtm('https://service-aeo-audit.ingwaz.space'),
+  },
 ]
 
 export const MAINTENANCE_TOOLS: PortfolioTool[] = [
