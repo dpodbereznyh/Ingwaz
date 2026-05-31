@@ -45,6 +45,12 @@ export const PORTFOLIO_TOOLS: PortfolioTool[] = [
     description: 'AEO-аудит: видимость сайта в ChatGPT, Perplexity и нейропоиске.',
     href: withUtm('https://service-aeo-audit.ingwaz.space'),
   },
+  {
+    id: 'offerstack',
+    name: 'OfferStack Audit',
+    description: 'Аудит продуктовой линейки: 2–5 URL → лестница офферов, пробелы, CTA.',
+    href: withUtm('https://offer-stack.ingwaz.space'),
+  },
 ]
 
 export const MAINTENANCE_TOOLS: PortfolioTool[] = [
