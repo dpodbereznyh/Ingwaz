@@ -38,6 +38,14 @@ const siteUrlRaw = typeof process.env.VITE_SITE_URL === 'string' ? process.env.V
 const siteUrl = siteUrlRaw.replace(/\/+$/, '')
 const ogImageUrl = typeof process.env.VITE_OG_IMAGE_URL === 'string' ? process.env.VITE_OG_IMAGE_URL.trim() : ''
 
+if (siteUrl === '' && process.env.SKIP_VITE_SITE_URL_CHECK !== '1') {
+  throw new Error(
+    '[prerender-seo] VITE_SITE_URL is required for production SEO (canonical, og:url, JSON-LD).\n' +
+      '  Copy frontend/.env.production.example → frontend/.env.production and set the canonical origin.\n' +
+      '  Local-only build without SEO: SKIP_VITE_SITE_URL_CHECK=1 npm run build',
+  )
+}
+
 const SITE_NAME = 'Сигнал аудитории'
 
 const SEO_BY_PATH = {
