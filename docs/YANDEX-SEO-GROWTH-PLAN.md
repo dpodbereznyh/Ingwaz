@@ -86,6 +86,8 @@
 | **2026-05-30** | sitemap **3** URL; legal `index, follow`; prerender `/privacy`, `/cookies`; деплой `public/`; `tools.ts` — MetadataPack, AEO Audit |
 | **2026-06-04** | nginx: убран `$uri/` (301 loop `/privacy`); dist → `public/`; переобход `/`, `/privacy`, `/cookies` **В очереди** 15:07 (ранее privacy/cookies — **Ошибка**) |
 | **2026-06-06** | Legal A: `/privacy`, `/cookies` → `noindex`; sitemap **1** URL; utm_content по блокам; hero copy; og-image.svg; gate фазы 2 зафиксирован в журнале |
+| **2026-06-06** | Кабинеты: GSC URL Inspection `/` → в индексе, запрос переиндексации отправлен; sitemap apex в GSC; Вебмастер sitemap пересдан 15:23 + повторный переобход sitemap; переобход `/` после Legal A; SSH `ingwaz-vps` в `~/.ssh/config` |
+| **2026-06-06** | **Baseline Метрика** (7 мая — 6 июн, счётчик `109383201`): визиты **51**, посетители **50**, просмотры **114**; прямые **46**, поиск **5**; цели `cta_comment_signal` / `cta_other_tool` / `consent_analytics_accept` в UI ✅, срабатываний **0** → CTR витрины **0%**; повторный срез ~**2026-06-20** |
 
 ## Бэклог (не MVP)
 
