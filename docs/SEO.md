@@ -51,8 +51,8 @@ curl -sI "https://ingwaz.space/privacy/"
 | URL | Назначение |
 |-----|------------|
 | `/` | Thesis, главный CTA → CommentSignal, список tools |
-| `/privacy` | Политика ПДн (когда текст готов; до финала — `noindex`) |
-| `/cookies` | Cookie / localStorage (когда готов; до финала — `noindex`) |
+| `/privacy` | Политика ПДн — **noindex** до финального текста (доступна по ссылке, не в sitemap) |
+| `/cookies` | Cookie / localStorage — **noindex** до финала (доступна по ссылке, не в sitemap) |
 
 **Опционально (после MVP, не рубрики):**
 
@@ -115,7 +115,7 @@ Sitemap: https://ingwaz.space/sitemap.xml
 
 Без `Disallow: /api/` (API на корне нет).
 
-**sitemap.xml (MVP):** 1–3 URL (`/`, позже `/privacy`, `/cookies`).
+**sitemap.xml (MVP):** **1** URL (`https://ingwaz.space`). Legal — prerender + `noindex`, без `<loc>`.
 
 ---
 

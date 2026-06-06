@@ -324,6 +324,35 @@ a {
   font-size: 0.95rem;
 }
 
+.evidence-layout {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .evidence-layout {
+    grid-template-columns: 1fr minmax(200px, 280px);
+    align-items: start;
+  }
+}
+
+.evidence-bullets {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--text-secondary);
+  font-size: 0.98rem;
+}
+
+.evidence-bullets li + li {
+  margin-top: 0.5rem;
+}
+
+.experiments-compact {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
 .evidence-screenshot {
   margin: 0;
 }

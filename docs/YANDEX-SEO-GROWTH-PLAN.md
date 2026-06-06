@@ -11,12 +11,14 @@
 ## URL для переобхода (MVP)
 
 1. https://ingwaz.space  
-2. https://ingwaz.space/privacy  
-3. https://ingwaz.space/cookies  
 
-`sitemap.xml` и `INDEXABLE_PATHS` синхронизированы (**30.05.2026**); prerender для трёх путей.
+**Legal (сценарий A, 06.2026):** `/privacy`, `/cookies` — `noindex, follow`, **не** в `sitemap.xml`; prerender для краулеров. Переобход legal не нужен до финализации текстов.
+
+`INDEXABLE_PATHS` = `/` только; `PRERENDER_PATHS` = `/`, `/privacy`, `/cookies`.
 
 Не отправлять варианты **со слэшем** — 301 на канон без `/`.
+
+**Google Search Console:** после релиза — sitemap `https://ingwaz.space/sitemap.xml` (1 URL); URL Inspection для `/` при изменении hero/OG.
 
 ---
 
@@ -82,6 +84,8 @@
 | Дата | Действие |
 |------|----------|
 | **2026-05-30** | sitemap **3** URL; legal `index, follow`; prerender `/privacy`, `/cookies`; деплой `public/`; `tools.ts` — MetadataPack, AEO Audit |
+| **2026-06-04** | nginx: убран `$uri/` (301 loop `/privacy`); dist → `public/`; переобход `/`, `/privacy`, `/cookies` **В очереди** 15:07 (ранее privacy/cookies — **Ошибка**) |
+| **2026-06-06** | Legal A: `/privacy`, `/cookies` → `noindex`; sitemap **1** URL; utm_content по блокам; hero copy; og-image.svg; gate фазы 2 зафиксирован в журнале |
 
 ## Бэклог (не MVP)
 

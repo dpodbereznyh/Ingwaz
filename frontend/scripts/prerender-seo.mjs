@@ -62,18 +62,18 @@ const SEO_BY_PATH = {
     description:
       'Черновик политики конфиденциальности Сигнал аудитории. Не является финальным юридическим текстом.',
     keywords: 'конфиденциальность, персональные данные',
-    robots: 'index, follow',
+    robots: 'noindex, follow',
   },
   '/cookies': {
     title: 'Cookies и localStorage (черновик) — Сигнал аудитории',
     description:
       'Черновик описания cookies и localStorage для Сигнал аудитории. Не является финальным юридическим текстом.',
     keywords: 'cookies, localStorage',
-    robots: 'index, follow',
+    robots: 'noindex, follow',
   },
 }
 
-const INDEXABLE_PATHS = Object.keys(SEO_BY_PATH)
+const PRERENDER_PATHS = Object.keys(SEO_BY_PATH)
 const ORG_JSONLD_ID = 'ingwaz-jsonld-organization'
 const FAQ_JSONLD_ID = 'ingwaz-jsonld-faqpage'
 
@@ -209,7 +209,7 @@ function buildRouteHtml(routePath) {
   return html
 }
 
-for (const routePath of INDEXABLE_PATHS) {
+for (const routePath of PRERENDER_PATHS) {
   const html = buildRouteHtml(routePath)
   const outPath =
     routePath === '/'
@@ -219,4 +219,4 @@ for (const routePath of INDEXABLE_PATHS) {
   fs.writeFileSync(outPath, html, 'utf8')
 }
 
-console.log(`[prerender-seo] generated static HTML for: ${INDEXABLE_PATHS.join(', ')}`)
+console.log(`[prerender-seo] generated static HTML for: ${PRERENDER_PATHS.join(', ')}`)

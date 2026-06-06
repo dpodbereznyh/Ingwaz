@@ -10,7 +10,8 @@ export function LegalStubPage({ title, intro }: LegalStubPageProps) {
     <article className="legal-page">
       <h1>{title}</h1>
       <p className="legal-notice">
-        <strong>Черновик.</strong> Текст для юридической выверки; страница не индексируется поисковиками.
+        <strong>Черновик.</strong> Текст для юридической выверки. До публикации финальной версии страница закрыта от
+        индексации (<code>noindex</code>).
       </p>
       <p>{intro}</p>
       <p>

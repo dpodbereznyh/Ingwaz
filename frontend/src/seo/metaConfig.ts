@@ -25,14 +25,14 @@ const privacy: PageSeo = {
   title: `Политика конфиденциальности (черновик) — ${SITE_NAME}`,
   description: `Черновик политики конфиденциальности ${SITE_NAME}. Не является финальным юридическим текстом.`,
   keywords: 'конфиденциальность, персональные данные',
-  robots: 'index, follow',
+  robots: 'noindex, follow',
 }
 
 const cookies: PageSeo = {
   title: `Cookies и localStorage (черновик) — ${SITE_NAME}`,
   description: `Черновик описания cookies и localStorage для ${SITE_NAME}. Не является финальным юридическим текстом.`,
   keywords: 'cookies, localStorage',
-  robots: 'index, follow',
+  robots: 'noindex, follow',
 }
 
 const defaultSeo: PageSeo = {
@@ -71,8 +71,11 @@ export function resolvePageSeo(pathname: string): PageSeo {
   return defaultSeo
 }
 
-/** Индексируемые пути — синхронизируйте с public/sitemap.xml и prerender-seo.mjs */
-export const INDEXABLE_PATHS = ['/', '/privacy', '/cookies'] as const
+/** Индексируемые пути — синхронизируйте с public/sitemap.xml (legal — noindex, только prerender). */
+export const INDEXABLE_PATHS = ['/'] as const
+
+/** Публичные маршруты с prerender (включая legal noindex). */
+export const PRERENDER_PATHS = ['/', '/privacy', '/cookies'] as const
 
 export function buildOrganizationJsonLd(baseUrl: string): object {
   return {

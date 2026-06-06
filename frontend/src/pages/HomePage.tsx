@@ -1,6 +1,12 @@
 import { Fragment } from 'react'
 import { METRIKA_GOALS, reachMetrikaGoal } from '../analytics/metricaGoals'
-import { MAINTENANCE_TOOLS, PORTFOLIO_TOOLS, PRIMARY_TOOL } from '../config/tools'
+import {
+  MAINTENANCE_TOOLS,
+  PORTFOLIO_TOOLS,
+  PRIMARY_TOOL,
+  toolUrl,
+  UTM_CONTENT,
+} from '../config/tools'
 import { HOME_FAQ_ITEMS } from '../seo/homeFaq'
 
 function trackToolClick(toolId: string, primary?: boolean) {
@@ -10,17 +16,21 @@ function trackToolClick(toolId: string, primary?: boolean) {
   )
 }
 
+const MAINTENANCE_LABEL = MAINTENANCE_TOOLS.map((t) => t.name).join(', ')
+
 export function HomePage() {
   const secondaryTools = PORTFOLIO_TOOLS.filter((t) => !t.primary)
+  const heroCsUrl = toolUrl(PRIMARY_TOOL, UTM_CONTENT.HERO_PRIMARY)
+  const screenshotCsUrl = toolUrl(PRIMARY_TOOL, UTM_CONTENT.SCREENSHOT_CTA)
 
   return (
     <>
       <header className="hero">
-        <p className="eyebrow">Аналитика аудитории для экспертного контента</p>
+        <p className="eyebrow">Для авторов YouTube, образовательных проектов и экспертного контента</p>
         <h1>Сигнал аудитории</h1>
         <p className="tagline">
-          Извлекайте темы, вопросы и повторяющиеся сигналы из комментариев аудитории — до того, как контент
-          перестанет попадать в запрос.
+          Находите повторяющиеся вопросы, боли и темы в комментариях YouTube, чтобы понимать, что аудитория хочет
+          увидеть следующим.
         </p>
         <p className="thesis">
           «Сигнал аудитории» — минимальная витрина инструментов для авторов экспертного контента: YouTube,
@@ -34,47 +44,55 @@ export function HomePage() {
           Главный инструмент
         </h2>
         <a
-          href={PRIMARY_TOOL.href}
+          href={heroCsUrl}
           className="primary-cta"
           onClick={() => trackToolClick(PRIMARY_TOOL.id, true)}
           rel="noopener noreferrer"
         >
-          Анализировать комментарии YouTube
+          Найти сигналы в комментариях
         </a>
-        <p className="primary-cta-caption">
-          CommentSignal помогает находить повторяющиеся вопросы, боли и идеи для новых видео из комментариев
-          аудитории.
-        </p>
+        <p className="primary-cta-caption">Анализ комментариев YouTube без доступа к вашему каналу.</p>
       </section>
 
       <section className="section" aria-labelledby="evidence-heading">
         <h2 id="evidence-heading" className="section-title">
           Как выглядит сигнал
         </h2>
-        <figure className="evidence-screenshot">
-          <a
-            href={PRIMARY_TOOL.href}
-            className="evidence-screenshot-link"
-            onClick={() => trackToolClick(PRIMARY_TOOL.id, true)}
-            rel="noopener noreferrer"
-          >
-            <img
-              src="/images/commentsignal-screenshot.png"
-              alt="CommentSignal: идеи для роликов из комментариев YouTube"
-              width={1280}
-              height={800}
-              loading="lazy"
-              decoding="async"
-            />
-          </a>
-          <figcaption className="evidence-note">
-            Скриншот сервиса CommentSignal на{' '}
-            <a href="https://commentsignal.ingwaz.space" rel="noopener noreferrer">
-              commentsignal.ingwaz.space
+        <div className="evidence-layout">
+          <figure className="evidence-screenshot">
+            <a
+              href={screenshotCsUrl}
+              className="evidence-screenshot-link"
+              onClick={() => trackToolClick(PRIMARY_TOOL.id, true)}
+              rel="noopener noreferrer"
+            >
+              <img
+                src="/images/commentsignal-screenshot.png"
+                alt="CommentSignal: идеи для роликов из комментариев YouTube"
+                width={1280}
+                height={800}
+                loading="lazy"
+                decoding="async"
+              />
             </a>
-            .
-          </figcaption>
-        </figure>
+            <figcaption className="evidence-note">
+              Скриншот сервиса CommentSignal на{' '}
+              <a
+                href={toolUrl(PRIMARY_TOOL, UTM_CONTENT.SCREENSHOT_IMAGE)}
+                onClick={() => trackToolClick(PRIMARY_TOOL.id, true)}
+                rel="noopener noreferrer"
+              >
+                commentsignal.ingwaz.space
+              </a>
+              .
+            </figcaption>
+          </figure>
+          <ul className="evidence-bullets">
+            <li>какие вопросы повторяются чаще всего</li>
+            <li>какие темы аудитория ждёт</li>
+            <li>что записать следующим видео</li>
+          </ul>
+        </div>
       </section>
 
       <section className="section" aria-labelledby="audience-heading">
@@ -100,7 +118,7 @@ export function HomePage() {
             {secondaryTools.map((tool) => (
               <li key={tool.id}>
                 <a
-                  href={tool.href}
+                  href={toolUrl(tool)}
                   className="tool-list-link"
                   onClick={() => trackToolClick(tool.id)}
                   rel="noopener noreferrer"
@@ -128,27 +146,13 @@ export function HomePage() {
         </dl>
       </section>
 
-      <section className="section section-experiments" aria-labelledby="experiments-heading">
+      <section className="section section-experiments section-muted" aria-labelledby="experiments-heading">
         <h2 id="experiments-heading" className="section-title section-title--small">
           Другие эксперименты
         </h2>
-        <p className="experiments-intro">
-          Несколько внутренних инструментов и MVP, которые пока не являются основным направлением платформы.
+        <p className="experiments-compact">
+          Архив экспериментов: {MAINTENANCE_LABEL} и другие внутренние MVP — не основное направление платформы.
         </p>
-        <ul className="experiments-list">
-          {MAINTENANCE_TOOLS.map((tool) => (
-            <li key={tool.id}>
-              <a
-                href={tool.href}
-                className="experiments-link"
-                onClick={() => trackToolClick(tool.id)}
-                rel="noopener noreferrer"
-              >
-                {tool.name}
-              </a>
-            </li>
-          ))}
-        </ul>
       </section>
     </>
   )
