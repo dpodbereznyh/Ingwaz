@@ -54,7 +54,7 @@ const SEO_BY_PATH = {
     description:
       'CommentSignal и смежные утилиты: инсайты из комментариев и feedback, идеи для контента. Для YouTube и экспертных каналов.',
     keywords:
-      'сигнал аудитории, инсайты из комментариев, идеи для контента, youtube комментарии, audience intelligence, CommentSignal',
+      'сигнал аудитории, инструменты для youtube, инсайты из комментариев, идеи для контента, youtube комментарии, audience intelligence, CommentSignal',
     robots: 'index, follow',
   },
   '/privacy': {

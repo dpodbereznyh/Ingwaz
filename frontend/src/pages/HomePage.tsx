@@ -109,6 +109,17 @@ export function HomePage() {
         </p>
       </section>
 
+      <section className="section" aria-labelledby="portfolio-heading">
+        <h2 id="portfolio-heading" className="section-title section-title--small">
+          Витрина инструментов для YouTube-автора
+        </h2>
+        <p className="audience-fit">
+          На <strong>ingwaz.space</strong> — не агентство, а узкий портфель SaaS: CommentSignal для сигналов из
+          комментариев, Metadata Pack для карточки ролика, Social Pack и Repack для постов из видео. Каждый сервис —
+          отдельный поддомен; здесь только навигация и UTM-ссылки.
+        </p>
+      </section>
+
       {secondaryTools.length > 0 ? (
         <section className="section section-secondary" aria-labelledby="secondary-heading">
           <h2 id="secondary-heading" className="section-title section-title--small">

@@ -88,6 +88,8 @@
 | **2026-06-06** | Legal A: `/privacy`, `/cookies` → `noindex`; sitemap **1** URL; utm_content по блокам; hero copy; og-image.svg; gate фазы 2 зафиксирован в журнале |
 | **2026-06-06** | Кабинеты: GSC URL Inspection `/` → в индексе, запрос переиндексации отправлен; sitemap apex в GSC; Вебмастер sitemap пересдан 15:23 + повторный переобход sitemap; переобход `/` после Legal A; SSH `ingwaz-vps` в `~/.ssh/config` |
 | **2026-06-06** | **Baseline Метрика** (7 мая — 6 июн, счётчик `109383201`): визиты **51**, посетители **50**, просмотры **114**; прямые **46**, поиск **5**; цели `cta_comment_signal` / `cta_other_tool` / `consent_analytics_accept` в UI ✅, срабатываний **0** → CTR витрины **0%**; повторный срез ~**2026-06-20** |
+| **2026-06-20** | **Parity wave 2:** H2 «Витрина инструментов для YouTube-автора» + FAQ портфеля на `/`; keywords `инструменты для youtube`; dist → `public/`; **переобход** `https://ingwaz.space` «In queue» 22:39 |
+| **2026-06-18** | — | Wordstat refresh apex (vitrona): [WORDSTAT-KEYWORDS-INGWAZ.md](WORDSTAT-KEYWORDS-INGWAZ.md) **18.05–16.06**; meta без изменений; «исследование аудитории» 5368, «сигнал аудитории» 654 |
 
 ## Бэклог (не MVP)
 
