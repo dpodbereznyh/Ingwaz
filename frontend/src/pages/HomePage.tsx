@@ -143,6 +143,17 @@ export function HomePage() {
         </section>
       ) : null}
 
+      <section className="section section-audience" aria-labelledby="audience-heading">
+        <h2 id="audience-heading" className="section-title section-title--small">
+          Кому подходит платформа
+        </h2>
+        <p className="tagline">
+          Авторам YouTube и education-проектов — CommentSignal, Metadata Pack, SEO Brief; для запуска и PMF —
+          Competitor Snapshot и Landing Critic; для инфобизнеса — OfferStack и Course Page Score. Apex не конкурирует с
+          поддоменами в organic: витрина ведёт на инструменты с UTM.
+        </p>
+      </section>
+
       <section className="section section-faq" aria-labelledby="faq-heading">
         <h2 id="faq-heading" className="section-title section-title--small">
           Частые вопросы
