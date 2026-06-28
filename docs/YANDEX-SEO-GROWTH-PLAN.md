@@ -83,6 +83,7 @@
 
 | Дата | Действие |
 |------|----------|
+| **2026-06-28** | **Batch B:** +1 FAQ (Landing Critic, Quiz, OfferStack) + JSON-LD FAQPage; dist → `public/`; **переобход** `https://ingwaz.space` — отправить; git `aef0726` |
 | **2026-05-30** | sitemap **3** URL; legal `index, follow`; prerender `/privacy`, `/cookies`; деплой `public/`; `tools.ts` — MetadataPack, AEO Audit |
 | **2026-06-04** | nginx: убран `$uri/` (301 loop `/privacy`); dist → `public/`; переобход `/`, `/privacy`, `/cookies` **В очереди** 15:07 (ранее privacy/cookies — **Ошибка**) |
 | **2026-06-06** | Legal A: `/privacy`, `/cookies` → `noindex`; sitemap **1** URL; utm_content по блокам; hero copy; og-image.svg; gate фазы 2 зафиксирован в журнале |
