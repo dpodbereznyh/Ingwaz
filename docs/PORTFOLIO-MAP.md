@@ -13,5 +13,8 @@
 | `quiz.ingwaz.space` | Quiz | `D:\Works\quiz` | Maintenance (B2C) |
 | `metadatapack.ingwaz.space` | YouTube Metadata Pack | `D:\Works\MetadataPack` | Secondary (micro-SaaS) |
 | `service-aeo-audit.ingwaz.space` | AEO Visibility Audit | `D:\Works\SERVICE-AEO-AUDIT` | Secondary (micro-SaaS, EN) |
+| `revenue.ingwaz.space` | Revenue Intelligence | `D:\Works\revenue.ingwaz.space` | Secondary (micro-SaaS) |
+| `repack.ingwaz.space` | Репак из видео | `D:\Works\repack.ingwaz.space` | Secondary (micro-SaaS) |
+| `socialpack.ingwaz.space` | Social Pack | `D:\Works\socialpack.ingwaz.space` | Secondary (micro-SaaS) |
 
 **На главной корня:** CommentSignal — главный CTA; остальные — компактный список «другие инструменты», без шести равных hero-блоков.

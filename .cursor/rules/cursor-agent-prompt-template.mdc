@@ -1,0 +1,8 @@
+---
+description: Промты Agent — hub seo + docs/CURSOR-AGENT-PROMPT.md
+alwaysApply: true
+---
+
+# Cursor Agent — шаблон
+
+Задачи: `D:\Works\seo\docs\PORTFOLIO-SEO-AGENT-RULES.md` + `D:\Works\seo\docs\prompts\TASK-*.md` + **`docs/CURSOR-AGENT-PROMPT.md`** (PROJECT_ID `ingwaz`, apex).
