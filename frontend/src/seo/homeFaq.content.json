@@ -14,11 +14,11 @@
     },
     {
       "question": "Какие инструменты есть в портфеле ingwaz.space?",
-      "answer": "CommentSignal — анализ комментариев YouTube; Metadata Pack — title и главы для ролика; Social Pack и Repack — посты из транскрипта. Корень ingwaz.space — витрина со ссылками на поддомены, не единый аккаунт."
+      "answer": "CommentSignal — комментарии YouTube; Metadata Pack — title и главы; Social Pack и Repack — посты из видео; SEO Brief — брифы статей; Competitor Snapshot — обзор конкурентов; AEO Audit — gap для ChatGPT; OfferStack и Course Page Score — офферы и страницы курсов; Landing Critic — CRO лендинга; Invoice Kit, Quiz, Revenue, Interview — на своих поддоменах. Корень — витрина со ссылками, не единый аккаунт."
     },
     {
       "question": "Есть ли инструменты для лендингов, квизов и продуктовой линейки?",
-      "answer": "Да, на отдельных поддоменах: Landing Critic AI — разбор конверсии лендинга по URL; quiz.ingwaz.space — квизы и лид-магниты; OfferStack — аудит продуктовой линейки и офферов. Ссылки с UTM — на главной витрины."
+      "answer": "Да: Landing Critic AI (landingcriticai.ingwaz.space), Course Page Score (coursepage.ingwaz.space), OfferStack (offer-stack.ingwaz.space), Quiz (quiz.ingwaz.space), Invoice Kit (invoicekit.ingwaz.space). Ссылки с UTM — в блоке инструментов на главной витрины."
     }
   ]
 }

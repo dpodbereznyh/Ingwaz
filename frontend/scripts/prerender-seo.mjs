@@ -76,9 +76,28 @@ const SEO_BY_PATH = {
 const PRERENDER_PATHS = Object.keys(SEO_BY_PATH)
 const ORG_JSONLD_ID = 'ingwaz-jsonld-organization'
 const FAQ_JSONLD_ID = 'ingwaz-jsonld-faqpage'
+const PORTFOLIO_NAV_ID = 'ingwaz-prerender-portfolio-nav'
 
 const HOME_FAQ_JSON_PATH = path.join(__dirname, '../src/seo/homeFaq.content.json')
 const homeFaqData = JSON.parse(fs.readFileSync(HOME_FAQ_JSON_PATH, 'utf8'))
+
+/** Канонические URL портфеля для краулера (совпадают с src/config/tools.ts + UTM). */
+const PORTFOLIO_CRAWL_LINKS = [
+  { name: 'CommentSignal', href: 'https://commentsignal.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_commentsignal' },
+  { name: 'SEO Brief Generator', href: 'https://seobrief.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_seobrief' },
+  { name: 'Competitor Snapshot', href: 'https://compsnap.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_compsnap' },
+  { name: 'Metadata Pack', href: 'https://metadatapack.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_metadatapack' },
+  { name: 'AEO Audit', href: 'https://service-aeo-audit.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_aeo' },
+  { name: 'OfferStack Audit', href: 'https://offer-stack.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_offerstack' },
+  { name: 'Landing Critic AI', href: 'https://landingcriticai.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_landingcritic' },
+  { name: 'Course Page Score', href: 'https://coursepage.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_coursepage' },
+  { name: 'Social Pack', href: 'https://socialpack.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_socialpack' },
+  { name: 'Repack', href: 'https://repack.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_repack' },
+  { name: 'Revenue Intelligence', href: 'https://revenue.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_revenue' },
+  { name: 'Customer Interview Synthesizer', href: 'https://interview.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_interview' },
+  { name: 'Invoice & Proposal Builder', href: 'https://invoicekit.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_invoice' },
+  { name: 'Quiz', href: 'https://quiz.ingwaz.space/?utm_source=ingwaz&utm_medium=portal&utm_campaign=root&utm_content=prerender_quiz' },
+]
 
 function buildHomeFaqPageJsonLdFromData(data) {
   return {
@@ -167,6 +186,24 @@ function escapeRegExp(text) {
   return text.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
 }
 
+function upsertPortfolioNav(html) {
+  const items = PORTFOLIO_CRAWL_LINKS.map(
+    (t) => `<li><a href="${escapeHtml(t.href)}">${escapeHtml(t.name)}</a></li>`,
+  ).join('')
+  const block = `<nav id="${PORTFOLIO_NAV_ID}" aria-label="Инструменты портфеля Ingwaz" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0"><h2>Инструменты портфеля</h2><ul>${items}</ul></nav>`
+  const pattern = new RegExp(
+    `<nav\\s+id=["']${escapeRegExp(PORTFOLIO_NAV_ID)}["'][\\s\\S]*?<\\/nav>`,
+    'i',
+  )
+  if (pattern.test(html)) {
+    return html.replace(pattern, block)
+  }
+  if (/<div\s+id=["']root["']\s*>\s*<\/div>/i.test(html)) {
+    return html.replace(/<div\s+id=["']root["']\s*>\s*<\/div>/i, `${block}\n    <div id="root"></div>`)
+  }
+  return html.replace('</body>', `  ${block}\n  </body>`)
+}
+
 function buildRouteHtml(routePath) {
   const seo = SEO_BY_PATH[routePath]
   let html = baseTemplate
@@ -192,6 +229,7 @@ function buildRouteHtml(routePath) {
     })
     if (routePath === '/') {
       html = upsertJsonLd(html, FAQ_JSONLD_ID, buildHomeFaqPageJsonLdFromData(homeFaqData))
+      html = upsertPortfolioNav(html)
     }
   } else {
     html = removeCanonical(html)
