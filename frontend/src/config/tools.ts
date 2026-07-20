@@ -71,31 +71,66 @@ export const PORTFOLIO_TOOLS: PortfolioTool[] = [
     baseUrl: 'https://offer-stack.ingwaz.space',
     utmContent: 'secondary_offerstack',
   },
-]
-
-export const MAINTENANCE_TOOLS: PortfolioTool[] = [
   {
     id: 'landingcritic',
     name: 'Landing Critic AI',
-    description: 'Разбор лендинга и рекомендации по улучшению.',
+    description: 'Разбор маркетингового лендинга по URL: оффер, CTA, конверсия.',
     baseUrl: 'https://landingcriticai.ingwaz.space',
-    utmContent: 'maintenance_landingcritic',
+    utmContent: 'secondary_landingcritic',
+  },
+  {
+    id: 'coursepage',
+    name: 'Course Page Score',
+    description: 'Оценка продающей страницы онлайн-курса (GetCourse, Tilda): программа, цена, CTA.',
+    baseUrl: 'https://coursepage.ingwaz.space',
+    utmContent: 'secondary_coursepage',
+  },
+  {
+    id: 'socialpack',
+    name: 'Social Pack',
+    description: 'Пакет постов для соцсетей из видео или транскрипта.',
+    baseUrl: 'https://socialpack.ingwaz.space',
+    utmContent: 'secondary_socialpack',
+  },
+  {
+    id: 'repack',
+    name: 'Repack',
+    description: 'Репак длинного видео в короткие форматы и тексты.',
+    baseUrl: 'https://repack.ingwaz.space',
+    utmContent: 'secondary_repack',
+  },
+  {
+    id: 'revenue',
+    name: 'Revenue Intelligence',
+    description: 'Сигналы выручки и продуктовых гипотез для роста.',
+    baseUrl: 'https://revenue.ingwaz.space',
+    utmContent: 'secondary_revenue',
+  },
+  {
+    id: 'interview',
+    name: 'Customer Interview Synthesizer',
+    description: 'Синтез customer interviews: темы, цитаты, гипотезы.',
+    baseUrl: 'https://interview.ingwaz.space',
+    utmContent: 'secondary_interview',
   },
   {
     id: 'invoice',
     name: 'Invoice & Proposal Builder',
-    description: 'Счета и коммерческие предложения.',
+    description: 'Счета и коммерческие предложения для фриланса и агентств.',
     baseUrl: 'https://invoicekit.ingwaz.space',
-    utmContent: 'maintenance_invoice',
+    utmContent: 'secondary_invoice',
   },
   {
     id: 'quiz',
     name: 'Quiz',
     description: 'Онлайн-квизы с прогрессией (B2C).',
     baseUrl: 'https://quiz.ingwaz.space',
-    utmContent: 'maintenance_quiz',
+    utmContent: 'secondary_quiz',
   },
 ]
+
+/** Эксперименты вне основной витрины — всё ещё с UTM-ссылками на прод. */
+export const MAINTENANCE_TOOLS: PortfolioTool[] = []
 
 export const PRIMARY_TOOL = PORTFOLIO_TOOLS.find((t) => t.primary)!
 

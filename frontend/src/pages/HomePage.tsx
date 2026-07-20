@@ -1,7 +1,6 @@
 import { Fragment } from 'react'
 import { METRIKA_GOALS, reachMetrikaGoal } from '../analytics/metricaGoals'
 import {
-  MAINTENANCE_TOOLS,
   PORTFOLIO_TOOLS,
   PRIMARY_TOOL,
   toolUrl,
@@ -15,8 +14,6 @@ function trackToolClick(toolId: string, primary?: boolean) {
     { tool: toolId },
   )
 }
-
-const MAINTENANCE_LABEL = MAINTENANCE_TOOLS.map((t) => t.name).join(', ')
 
 export function HomePage() {
   const secondaryTools = PORTFOLIO_TOOLS.filter((t) => !t.primary)
@@ -123,7 +120,7 @@ export function HomePage() {
       {secondaryTools.length > 0 ? (
         <section className="section section-secondary" aria-labelledby="secondary-heading">
           <h2 id="secondary-heading" className="section-title section-title--small">
-            Смежные инструменты
+            Инструменты портфеля
           </h2>
           <ul className="tool-list-compact">
             {secondaryTools.map((tool) => (
@@ -166,15 +163,6 @@ export function HomePage() {
             </Fragment>
           ))}
         </dl>
-      </section>
-
-      <section className="section section-experiments section-muted" aria-labelledby="experiments-heading">
-        <h2 id="experiments-heading" className="section-title section-title--small">
-          Другие эксперименты
-        </h2>
-        <p className="experiments-compact">
-          Архив экспериментов: {MAINTENANCE_LABEL} и другие внутренние MVP — не основное направление платформы.
-        </p>
       </section>
     </>
   )
