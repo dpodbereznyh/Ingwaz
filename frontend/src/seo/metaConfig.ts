@@ -13,11 +13,11 @@ export type PageSeo = {
 const SITE_NAME = 'Сигнал аудитории'
 
 const home: PageSeo = {
-  title: 'Сигнал аудитории — инструменты для экспертных авторов | ingwaz.space',
+  title: 'Инсайты из комментариев и инструменты для авторов | ingwaz.space',
   description:
     'CommentSignal и смежные утилиты: инсайты из комментариев и feedback, идеи для контента. Для YouTube и экспертных каналов.',
   keywords:
-    'сигнал аудитории, инструменты для youtube, инсайты из комментариев, идеи для контента, youtube комментарии, audience intelligence, CommentSignal',
+    'инсайты из комментариев, инструменты для youtube, идеи для контента, youtube комментарии, audience intelligence, CommentSignal, сигнал аудитории',
   robots: 'index, follow',
 }
 

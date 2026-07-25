@@ -142,3 +142,7 @@ Sitemap: https://ingwaz.space/sitemap.xml
 ## 9. Чего не делать (anti-goals SEO)
 
 См. [ROOT-DOMAIN-DECISION.md](./ROOT-DOMAIN-DECISION.md) §4: мультирубрика, thin pages, дубли intent subs, programmatic без артефактов.
+
+
+**Feature gap:** ��� SaaS-peer � [COMPETITOR-FEATURE-NONE.md](COMPETITOR-FEATURE-NONE.md).
+
