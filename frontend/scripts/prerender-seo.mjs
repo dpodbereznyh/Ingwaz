@@ -198,10 +198,27 @@ function upsertPortfolioNav(html) {
   if (pattern.test(html)) {
     return html.replace(pattern, block)
   }
-  if (/<div\s+id=["']root["']\s*>\s*<\/div>/i.test(html)) {
-    return html.replace(/<div\s+id=["']root["']\s*>\s*<\/div>/i, `${block}\n    <div id="root"></div>`)
+  if (/<div\s+id=["']root["']/i.test(html)) {
+    return html.replace(/<div\s+id=["']root["']/i, `${block}\n    <div id="root"`)
   }
   return html.replace('</body>', `  ${block}\n  </body>`)
+}
+
+/** Visible thesis + tools for crawlers inside #root (React replaces on hydrate). */
+function buildHomeStaticBody() {
+  const tools = PORTFOLIO_CRAWL_LINKS.map(
+    (t) => `<li><a href="${escapeHtml(t.href)}">${escapeHtml(t.name)}</a></li>`,
+  ).join('')
+  return `<article><header><p>Для авторов YouTube, образовательных проектов и экспертного контента</p><h1>Сигнал аудитории</h1><p>Находите повторяющиеся вопросы, боли и темы в комментариях YouTube, чтобы понимать, что аудитория хочет увидеть следующим.</p><p>«Сигнал аудитории» — минимальная витрина инструментов для авторов экспертного контента: YouTube, образование, B2B и нишевая экспертиза. Основной фокус — понимание аудитории через комментарии, паттерны вопросов и контент-сигналы, а не «ИИ ради ИИ».</p></header><section><h2>Главный инструмент</h2><p><a href="${escapeHtml(
+    PORTFOLIO_CRAWL_LINKS[0].href,
+  )}">Найти сигналы в комментариях</a> — анализ комментариев YouTube без доступа к вашему каналу (CommentSignal).</p></section><section><h2>Инструменты портфеля</h2><ul>${tools}</ul></section></article>`
+}
+
+function injectRootBody(html, bodyInner) {
+  if (/<div id="root"><\/div>/i.test(html)) {
+    return html.replace(/<div id="root"><\/div>/i, `<div id="root">${bodyInner}</div>`)
+  }
+  return html
 }
 
 function buildRouteHtml(routePath) {
@@ -229,6 +246,7 @@ function buildRouteHtml(routePath) {
     })
     if (routePath === '/') {
       html = upsertJsonLd(html, FAQ_JSONLD_ID, buildHomeFaqPageJsonLdFromData(homeFaqData))
+      html = injectRootBody(html, buildHomeStaticBody())
       html = upsertPortfolioNav(html)
     }
   } else {
