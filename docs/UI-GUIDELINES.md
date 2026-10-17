@@ -25,7 +25,7 @@ Thesis-витрина, не marketplace. Copy: [CONTENT-COPY.md](./CONTENT-COPY.
 | Evidence | Скрин CommentSignal + подпись со ссылкой на prod |
 | Secondary | Текстовые ссылки, без равных card с primary |
 | Maintenance | Мелкий текст, border-top muted |
-| FAQ | `<details>` или простой список, без accordion-анимаций |
+| FAQ | `<details>`/`<summary>` (Ingwaz accordion); hairline + leaf-chevron; см. PORTFOLIO-BRAND-VISUAL §7.1 |
 
 ---
 
